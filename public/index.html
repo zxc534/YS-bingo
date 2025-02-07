@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>양서의 밤 빙고 게임</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="main-container">
+    <div id="title">양서의 밤 빙고 게임</div>
+
+    <div id="name-box">
+      <input id="name-input" placeholder="이름을 입력해주세요." />
+    </div>
+
+    <div id="bingo-box">
+      <div id="bingo-title"></div>
+
+      <div id="bingo-row">
+        <div class="bingo-block"></div>
+        <div class="bingo-block"></div>
+        <div class="bingo-block"></div>
+      </div>
+
+      <div id="bingo-row">
+        <div class="bingo-block"></div>
+        <div class="bingo-block">
+          <div id="bingo-state">준비 중...</div>
+          <button id="bingo-refresh-button">새로고침</button>
+        </div>
+        <div class="bingo-block"></div>
+      </div>
+
+      <div id="bingo-row">
+        <div class="bingo-block"></div>
+        <div class="bingo-block"></div>
+        <div class="bingo-block"></div>
+      </div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
