@@ -2,6 +2,7 @@
 // check local storage
 if(localStorage.getItem("YSbingo-name") !== null) {
     ChangeBingoView();
+    CheckBingo();
 }
 
 // 이름 입력
@@ -39,8 +40,8 @@ function ChangeBingoView() {
     const bingo_title = document.getElementById("bingo-title");
 
     name_box.style.display = 'none';
-    bingo_box.style.display = 'block';
-    bingo_title.innerText = `${localStorage.getItem("YSbingo-name")}의 빙고판`;
+    bingo_box.style.display = 'flex';
+    bingo_title.innerHTML = `<b>${localStorage.getItem("YSbingo-name")}</b>의 빙고판`;
 }
 
 // 빙고판 불러오기
@@ -88,9 +89,10 @@ function CheckBingo() {
 
 const bingo_refresh_button = document.getElementById("bingo-refresh-button");
 bingo_refresh_button.addEventListener("click", () => {
-  CheckBingo();
+  location.href = location.href;
 });
 
+// 이미지 전송
 async function UploadImage (e, number) {
   if(e.target.files.length === 0) {
     return;
@@ -108,6 +110,7 @@ async function UploadImage (e, number) {
     });
     const result = await response.json();
     console.log('서버 응답:', result);
+    location.href = location.href;
   } catch (error) {
     console.log('업로드 중 에러 발생', error);
   }
@@ -138,3 +141,22 @@ function fetchImage(target, i) {
     });
 }
 
+// 모달
+const modal = document.getElementById("modal");
+const openModalBtn = document.getElementById("openModalBtn");
+
+// 모달 열기
+openModalBtn.onclick = function() {
+  modal.style.display = "block";
+};
+
+// 모달 외부 클릭 시 닫기
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+
+const githubBtn = document.getElementById('github-btn');
+githubBtn.addEventListener('click', ()=> {location.href = 'https://github.com/zxc534/YS-bingo'});
