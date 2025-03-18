@@ -28,43 +28,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(uploadDir)); 
 
-const users = [{
-  name: '김소정',
-  bingo: [],
-  count: 0,
-},{
-  name: '김순수',
-  bingo: [],
-  count: 0,
-},{
-  name: '김호윤',
-  bingo: [],
-  count: 0,
-},{
-  name: '문태주',
-  bingo: [],
-  count: 0,
-},{
-  name: '박서경',
-  bingo: [],
-  count: 0,
-},{
-  name: '송민경',
-  bingo: [],
-  count: 0,
-},{
-  name: '유희엽',
-  bingo: [],
-  count: 0,
-},{
-  name: '장유리',
-  bingo: [],
-  count: 0,
-},{
-  name: '정운교',
-  bingo: [],
-  count: 0,
-},];
+const users = [];
 
 // 이미지 업로드
 app.post('/upload-image', upload.single('image'), (req, res) => {
